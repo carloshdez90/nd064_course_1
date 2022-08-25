@@ -1,11 +1,41 @@
-## Docker commands used to build the application 
-# TODO: insert the docker build command
+## Docker commands used to build the application
+
+- Make sure you are inside the `project` folder and run: `docker build -t techtrends .`
 
 ## Docker commands used to run the application
-# TODO: insert the docker run command
+
+- `docker run --rm -d -p 7111:3111 --name techtrends techtrends`
 
 ## Docker commands used to get the application logs
-# TODO: insert the docker logs command
+
+- `docker logs -f techtrends` With `-f` flag we can see logs in live mode.
 
 ## Logs from the container running the TechTrends application
-# TODO: paste logs from the Docker container 
+
+```
+ * Serving Flask app 'app' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+WARNING:werkzeug:2022-08-25 16:20:42,791 -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug:2022-08-25 16:20:42,791 -  * Running on http://172.17.0.2:3111/ (Press CTRL+C to quit)
+INFO:werkzeug:2022-08-25 16:22:28,108 - 172.17.0.1 - - [25/Aug/2022 16:22:28] "GET /create HTTP/1.1" 200 -
+INFO:werkzeug:2022-08-25 16:22:28,118 - 172.17.0.1 - - [25/Aug/2022 16:22:28] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:app:2022-08-25 16:22:40,844 - The Article: "New Post" was created successfully!
+INFO:werkzeug:2022-08-25 16:22:40,845 - 172.17.0.1 - - [25/Aug/2022 16:22:40] "POST /create HTTP/1.1" 302 -
+INFO:werkzeug:2022-08-25 16:22:40,857 - 172.17.0.1 - - [25/Aug/2022 16:22:40] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:2022-08-25 16:22:40,876 - 172.17.0.1 - - [25/Aug/2022 16:22:40] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:app:2022-08-25 16:22:47,446 - About Us page retrieved!
+INFO:werkzeug:2022-08-25 16:22:47,450 - 172.17.0.1 - - [25/Aug/2022 16:22:47] "GET /about HTTP/1.1" 200 -
+INFO:werkzeug:2022-08-25 16:22:47,469 - 172.17.0.1 - - [25/Aug/2022 16:22:47] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:werkzeug:2022-08-25 16:22:51,022 - 172.17.0.1 - - [25/Aug/2022 16:22:51] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:2022-08-25 16:22:51,046 - 172.17.0.1 - - [25/Aug/2022 16:22:51] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:app:2022-08-25 16:23:00,616 - The Article: "Kubernetes Certification" was retrieved successfully!
+INFO:werkzeug:2022-08-25 16:23:00,621 - 172.17.0.1 - - [25/Aug/2022 16:23:00] "GET /6 HTTP/1.1" 200 -
+INFO:werkzeug:2022-08-25 16:23:00,643 - 172.17.0.1 - - [25/Aug/2022 16:23:00] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:app:2022-08-25 16:23:06,595 - The Article with id: "61" does not exist!
+INFO:werkzeug:2022-08-25 16:23:06,597 - 172.17.0.1 - - [25/Aug/2022 16:23:06] "GET /61 HTTP/1.1" 404 -
+INFO:werkzeug:2022-08-25 16:23:06,613 - 172.17.0.1 - - [25/Aug/2022 16:23:06] "GET /static/css/main.css HTTP/1.1" 304 -
+```
