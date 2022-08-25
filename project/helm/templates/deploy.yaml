@@ -4,9 +4,9 @@ metadata:
   labels:
     app: techtrends
   name: techtrends
-  namespace: { { .Values.namespace.name } }
+  namespace: {{ .Values.namespace.name }}
 spec:
-  replicas:  { { .Values.replicaCount } }
+  replicas:  {{ .Values.replicaCount }}
   selector:
     matchLabels:
       app: techtrends
@@ -17,26 +17,26 @@ spec:
     spec:
       containers:
         - name: techtrends
-          image: { { .Values.image.repository } }:{ { .Values.image.tag } }
-          imagePullPolicy: { { .Values.image.pullPolicy } }
+          image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
           resources:
             requests:
-              memory: { { .Values.resources.requests.memory } }
-              cpu: { { .Values.resources.requests.cpu } }
+              memory: {{ .Values.resources.requests.memory }}
+              cpu: {{ .Values.resources.requests.cpu }}
             limits:
-              memory: { { .Values.resources.limits.memory } }
-              cpu: { { .Values.resources.limits.cpu } }
+              memory: {{ .Values.resources.limits.memory }}
+              cpu: {{ .Values.resources.limits.cpu }}
           livenessProbe:
             httpGet:
-              path: { { .Values.livenessProbePath } }
+              path: {{ .Values.livenessProbePath }}
               port: 3111
             initialDelaySeconds: 5
             periodSeconds: 10
           readinessProbe:
             httpGet:
-              path: { { .Values.readinessProbePath } }
+              path: {{ .Values.readinessProbePath }}
               port: 3111
             initialDelaySeconds: 5
             periodSeconds: 10
           ports:
-            - containerPort: { { .Values.containerPort } }
+            - containerPort: {{ .Values.containerPort }}
