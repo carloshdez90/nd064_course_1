@@ -98,7 +98,7 @@ def create():
 """
 
 
-@app.route('/healtz')
+@app.route('/healthz')
 def health_check():
     response = app.response_class(
         response=json.dumps({"result": "ok - healthy"}),
